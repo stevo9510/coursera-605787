@@ -1,0 +1,109 @@
+
+/********** Base styles **********/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+    text-align: center;
+    font-family: Helvetica;
+}
+
+h1 {
+    font-size: 1.75em;  /* Make font size of h1 75% larger than rest of page */
+}
+
+#chicken .section-title {
+    background-color: lightcoral;
+    color: black;
+}
+
+#beef .section-title {
+    background-color: orangered;
+    color: white;
+}
+
+#sushi .section-title {
+    background-color: burlywood;
+    color: black;
+}
+
+/* This is primary here to help us draw the border and leave some space between sections*/
+.section-contents {
+    background-color: lightgray;
+     
+    /* Mark the column as relative, so we can specify absolute positioning of section-title */
+    position: relative;
+
+    /* Give each column a fixed height, and hide text on overflow
+       This matches the screenshots provided in the assignment instructions
+    */
+    overflow: hidden;
+    height: 215px;
+
+    /* Centers text */
+    margin-right: auto; 
+    margin-left: auto;
+
+    /* Slightly reduce width to leave space between blocks */
+    width: 95%;
+    border: 1px solid black;
+}
+
+p {
+    /* Slightly reduce width to give some natural padding */
+    width: 95%;
+    padding-top: 15px; /* Gives space from section title */
+    color: black;
+}
+
+.section-title {
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    border: 1px solid black;
+    width: 125px;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+/* You must implement the following breakpoints that will be considered desktop, 
+    tablet, and mobile. The browser should display a desktop version of the site when the
+    width of the browser window is 992px and above.  Tablet view should appear only if
+    the width of the browser window is between 768px and 991px, inclusively. 
+    Mobile view should appear only if the width of the browser is equal to or less than 767px. 
+*/
+
+.col {
+    float: left;
+    margin-bottom: 15px;
+}
+
+/********** Large devices only **********/
+@media (min-width: 992px) {
+    .col-lg-4 {
+        width: 33.33%;
+    }
+}
+
+/********** Medium devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+    .col-md-6 {
+        width: 50%;
+    }
+    .col-md-12 {
+        width: 100%;
+    }
+    /* Used to help get bottom most section borders nice and lined up in with top sections */
+    .section-contents-md {
+        width: 97.5%;
+    }
+}
+
+/* Specifying to make explicit, though this would work without the following */
+@media (max-width: 767px) {
+    .col-sm-12 {
+        width: 100%;
+    }
+}

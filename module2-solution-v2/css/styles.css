@@ -81,6 +81,12 @@ p {
     margin-bottom: 15px;
 }
 
+.section-contents:hover {
+    cursor: ns-resize;  /* Change to resize icon per requirements.  This one is the up/down one */
+    overflow-x: hidden; /* Disallow horizontal scrolling completely */
+    overflow-y: auto;   /* Only allow vertical scrolling, if applicable (auto) */
+}
+
 .mobile-title {
     visibility: hidden;
 }

@@ -117,7 +117,7 @@ p {
     .col-sm-12 {
         width: 100%;
     }
-    /* Hide non-mobile title and show  mobile one */
+    /* Hide non-mobile title and show mobile one */
     h1{
         visibility: hidden;
     }
@@ -128,5 +128,20 @@ p {
         font-size: 1.25em;
         margin-bottom: 5px;
         font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    }
+
+    /* Bring section title out of absolute positioning back to static, make 100% width */
+    .section-title {
+        display: block;
+        position: static;
+        width: 100%;
+        margin-bottom: -10px;
+    }
+    p {
+        padding-top: 0px;
+    }
+    /* Add some text after each title */
+    .section-title span:after {
+        content: " is so delicious that it makes me the happiest person alive!"
     }
 }

@@ -1,0 +1,66 @@
+body {
+    background-color: white;
+    color: #3D6A6F; /* Set default font color for page */ 
+}
+
+.navbar {
+    background-color: #F1F5F3; /* Override default color for navbar background */ 
+}
+
+#navbar-container {
+    /* Override Bootstrap's container margin-left 
+    (that is set to auto) to make this navbar left aligned without margin */
+    margin-left: 0px;
+}
+
+.navbar-brand h1 { /* Food, LLC. */
+    font-weight: bold;
+    /* Clear margins to bring center within navbar */
+    margin: 0;
+    line-height: .75;
+    color: #3D6A6F; /* Override default set by Bootstrap */
+}
+
+#main-content {
+   padding-left: 45px;
+   padding-right: 45px;
+}
+
+#main-content h2 {
+    font-weight: bold;
+}
+
+#nav-list li {
+    text-align: center;
+    background: #3D6A6F;
+}
+
+#nav-list a:hover {
+    background: #A2C9D9;
+}
+
+#nav-list a {
+    color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+#main-content {
+    width: 100%;
+}
+
+#menu-info {
+    background-color: #C5DFDC;
+}
+
+@media (max-width: 767px) {
+    /* Note: Additional padding added to mobile view to give it a similar look to the 
+        screenshots of the assignment instructions
+    */
+    #main-content {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+
+}

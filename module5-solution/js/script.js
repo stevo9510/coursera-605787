@@ -193,19 +193,19 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
   function showAboutHtml(aboutHtml) {
     switchAboutToActive();
 
-    /* Note: In FontAwesome 5:
-       'fa fa-star' is equal to 'fas fa-star'
-       and 
-       'fa fa-star-o' is now 'far fa-star'
+    /* Note: In FontAwesome 5
+       'fa fa-star-o' no longer exists, and can now be specified as 'far fa-star'
     */
     var maxStars = 5;
     var randomRating = generateRandomNumber(1, maxStars);
     
     for(var index = 0; index < maxStars; index++){
-      var starClass = (index < randomRating) ? "fas fa-star" : "far fa-star";
+      var starClass = (index < randomRating) ? "fa fa-star" : "far fa-star";
+      // per instructions of assignment, insertProperty is to be used to replace each star property
       aboutHtml = insertProperty(aboutHtml, "star" + (index + 1), starClass);
     }
-    
+
+    // replace star text (bonus part)
     aboutHtml = insertProperty(aboutHtml, "star-text", randomRating + "-star rating");
 
     insertHtml("#main-content", aboutHtml);

@@ -29,12 +29,12 @@
 
         // List of shopping items
         var toBuyItems = [
-            { name: "cookies", quantity: 10 }, 
-            { name: "pie", quantity: 3 },
-            { name: "pizza", quantity: 2 },
-            { name: "tacos", quantity: 20 },
-            { name: "gyro", quantity: 11 },
-            { name: "reeses", quantity: 5 }
+            { name: "cookies", pricePerItem : 0.75, quantity: 10 }, 
+            { name: "pie", pricePerItem: 5.25, quantity: 3 },
+            { name: "pizza", pricePerItem: 10.99, quantity: 2 },
+            { name: "tacos", pricePerItem: 2, quantity: 20 },
+            { name: "gyro", pricePerItem: 6.5, quantity: 11 },
+            { name: "reeses", pricePerItem: 1.0, quantity: 5 }
         ];
         var boughtItems = [];
   

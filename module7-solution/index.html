@@ -22,6 +22,9 @@
       button > span {
         color: green;
       }
+	  li > input {
+		width: 50px;
+	  }
     </style>
   </head>
 <body ng-app="ShoppingListCheckOff">
@@ -35,7 +38,7 @@
      <h2>To Buy:</h2>
      <ul>
        <li ng-repeat="item in tbList.items">
-        Buy {{item.quantity}} {{item.name}} <button class="btn btn-default" ng-click="tbList.buyItem($index);"><span class="glyphicon glyphicon-ok"></span> Bought</button>
+        Buy {{item.quantity}} {{item.name}} <input type="text" ng-model="item.quantity" /> <button class="btn btn-default" ng-click="tbList.buyItem($index);"><span class="glyphicon glyphicon-ok"></span> Bought</button>
        </li>
      </ul>
      <div ng-if="tbList.items.length === 0" class="emptyMessage">Everything is bought!</div>

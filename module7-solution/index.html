@@ -23,7 +23,7 @@
         color: green;
       }
 	  li > input {
-		width: 50px;
+		  width: 50px;
 	  }
     </style>
   </head>
@@ -38,7 +38,13 @@
      <h2>To Buy:</h2>
      <ul>
        <li ng-repeat="item in tbList.items">
-        Buy {{item.quantity}} {{item.name}} <input type="text" ng-model="item.quantity" /> <button class="btn btn-default" ng-click="tbList.buyItem($index);"><span class="glyphicon glyphicon-ok"></span> Bought</button>
+        Buy {{item.quantity}} {{item.name}} <input type="text" ng-model="item.quantity" /> 
+        
+        <button ng-if="tbList.isNaturalNumber(item.quantity);" 
+            class="btn btn-default" 
+            ng-click="tbList.buyItem($index);">
+            <span class="glyphicon glyphicon-ok"></span> Bought
+        </button>
        </li>
      </ul>
      <div ng-if="tbList.items.length === 0" class="emptyMessage">Everything is bought!</div>
@@ -49,7 +55,13 @@
      <h2>Already Bought:</h2>
      <ul>
        <li ng-repeat="item in abList.items">
-         Bought {{item.quantity}} {{item.name}}
+         Bought {{item.quantity}} {{item.name}} for total price of 
+            {{item.quantity * item.pricePerItem | angularMoney}}
+            
+            <!-- Note: The above filter could also be done like this, but used custom filter to 
+              per requirements of assignment:
+            {{item.quantity * item.pricePerItem | currency : "$$$$$" : 2}}
+            --> 
        </li>
      </ul>
      <div ng-if="abList.items.length === 0" class="emptyMessage">Nothing bought yet.</div>

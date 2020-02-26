@@ -73,8 +73,17 @@ WARNING!!! WARNING!!!
   }
 
   var speakReducer = (acc, val) => { 
-    acc.hello.push(helloSpeaker.speakSimple(val)); 
-    acc.bye.push(byeSpeaker.speakSimple(val));
+    if(val.charAt(0).toLowerCase() == "j"){
+      acc.bye.push(byeSpeaker.speakSimple(val));
+    } else {
+      acc.hello.push(helloSpeaker.speakSimple(val)); 
+    }
+    // Note: Previously had this in here, which would fill both arrays with ALL names prefixed with Hello/Goodbye respectively
+    // However, based on re-reading the final sentence of the assignment:
+    // "The end result should be that the list prints out 3 times. The 3rd time, it will print each group of greetings separately"
+    //  acc.hello.push(helloSpeaker.speakSimple(val)); 
+    //  acc.bye.push(byeSpeaker.speakSimple(val));
+      
     return acc;
   };
 

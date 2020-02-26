@@ -40,6 +40,9 @@
        <li ng-repeat="item in tbList.items">
         Buy {{item.quantity}} {{item.name}} <input type="text" ng-model="item.quantity" /> 
         
+        <!-- Added some validation to ensure quantity is a natural number.
+          We'll allow 0 as a quantity.
+        -->
         <button ng-if="tbList.isNaturalNumber(item.quantity);" 
             class="btn btn-default" 
             ng-click="tbList.buyItem($index);">

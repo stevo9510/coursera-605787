@@ -37,6 +37,10 @@
                     items: ['$stateParams', 'MenuDataService',
                         function ($stateParams, MenuDataService) {
                             return MenuDataService.getItemsForCategory($stateParams.category);
+                        }],
+                    category: ['$stateParams',
+                        function ($stateParams) {
+                            return $stateParams.category;
                         }]
                 }
             });

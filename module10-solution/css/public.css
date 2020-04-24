@@ -111,6 +111,10 @@ h3.menu-item-title {
   font-size: .9em;
   font-style: italic;
 }
+/* END SINGLE CATEGORY PAGE */
+
+/* SIGN UP PAGE */
+
 .signup-form {
   padding-top: 15px;
 }
@@ -128,10 +132,14 @@ h3.menu-item-title {
   color: black;
   opacity: 100%;
   background-color: #f6b319;
-  
 }
-/* END SINGLE CATEGORY PAGE */
+.successful-save {
+  margin-top: 25px;
+  font-size: larger;
+  font-weight: bold;
+}
 
+/* END SIGN UP PAGE */
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {

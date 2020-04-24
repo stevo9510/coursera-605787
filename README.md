@@ -16,3 +16,5 @@
 [Module 8 Solution](http://stevo9510.github.io/coursera-605787/module8-solution "Module 8 Solution")
 
 [Module 9 Solution](http://stevo9510.github.io/coursera-605787/module9-solution "Module 9 Solution")
+
+[Module 10 Solution](http://stevo9510.github.io/coursera-605787/module10-solution "Module 10 Solution")

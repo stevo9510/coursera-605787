@@ -14,7 +14,7 @@
 
       promise.then(function (response) {
         console.log("Menu Item Response: ", response.data);
-        MyInfoService.setMenuNumberPreference($ctrl.user.menunumber);
+        MyInfoService.setUserInfo($ctrl.user);
         $ctrl.menuNumberNotFound = false;
         $ctrl.successfullySaved = true;
       })

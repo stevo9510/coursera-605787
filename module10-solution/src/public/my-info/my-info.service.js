@@ -6,14 +6,14 @@
 
     function MyInfoService() {
         var service = this;
-        var menuNumberPreference;
+        var userInfo;
 
-        service.getMenuNumberPreference = function () {
-            return menuNumberPreference;
+        service.getUserInfo = function () {
+            return userInfo;
         };
 
-        service.setMenuNumberPreference = function (menuNumberPref) {
-            menuNumberPreference = menuNumberPref;
+        service.setUserInfo = function (info) {
+            userInfo = info;
         };
     }
 

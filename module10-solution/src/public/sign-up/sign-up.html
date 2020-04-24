@@ -4,14 +4,14 @@
         <form name='regForm' class="signup-form text-center" novalidate>
             <input type="text" name="firstname" placeholder="First Name" ng-model="signUpCtrl.user.firstname" required>
             <br>
-            <span ng-if="(regForm.firstname.$error.required) && regForm.firstname.$touched">
+            <span ng-if="regForm.firstname.$error.required && regForm.firstname.$touched">
                 First name is required to be entered
             </span>
             <br>
 
             <input type="text" name="lastname" placeholder="Last Name" ng-model="signUpCtrl.user.lastname" required>
             <br>
-            <span ng-if="(regForm.lastname.$error.required) && regForm.lastname.$touched">
+            <span ng-if="regForm.lastname.$error.required && regForm.lastname.$touched">
                 Last name is required to be entered
             </span>
             <br>
@@ -31,7 +31,18 @@
             </span>
             <br>
 
+            <input type="text" name="menunumber" required placeholder="Menu Number of Favorite Dish" ng-model="signUpCtrl.user.menunumber">
+            <br>            
+            <span ng-if="regForm.menunumber.$error.required && regForm.menunumber.$touched">
+                Favorite menu number is required to be entered
+            </span>
+            <span ng-if="signUpCtrl.menuNumberNotFound === true">
+                No such menu item exists
+            </span>
+            <br>
+
             <button ng-disabled="regForm.$invalid" ng-click="signUpCtrl.submit()">Submit</button>
         </form>
+        <div class="successful-save text-center" ng-if="signUpCtrl.successfullySaved">Your information has been saved!</div>
     </fieldset>
 </div>

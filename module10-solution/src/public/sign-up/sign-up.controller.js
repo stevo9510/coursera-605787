@@ -22,8 +22,19 @@
         }
 
         $ctrl.submit = function () {
-            MyInfoService.setUserInfo($ctrl.user);
-            $ctrl.successfullySaved = true;
+            var promise = MenuService.getMenuItemPromise($ctrl.user.menunumber);
+
+            promise.then(function (response) {
+                console.log("Menu Item Response: ", response.data);
+                MyInfoService.setUserInfo($ctrl.user);
+                $scope.regForm.menunumber.$setValidity("invalid", true);
+                $ctrl.successfullySaved = true;
+
+            })
+                .catch(function (error) {
+                    $scope.regForm.menunumber.$setValidity("invalid", false);
+                    $ctrl.successfullySaved = false;
+                });
         };
     };
 

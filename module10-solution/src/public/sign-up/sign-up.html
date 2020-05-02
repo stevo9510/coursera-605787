@@ -31,9 +31,9 @@
             </span>
             <br>
 
-            <input type="text" name="menunumber" required placeholder="Menu Number of Favorite Dish" ng-model="signUpCtrl.user.menunumber" ng-blur="signUpCtrl.menuItemOnBlur()">
+            <input type="text" name="menunumber" ng-change="signUpCtrl.menuItemChanged()" required placeholder="Menu Number of Favorite Dish" ng-model="signUpCtrl.user.menunumber" ng-blur="signUpCtrl.menuItemOnBlur()">
             <br>        
-            <span ng-if="regForm.menunumber.$invalid && !regForm.menunumber.$error.required">
+            <span ng-if="regForm.menunumber.$invalid && !regForm.menunumber.$error.required && regForm.menunumber.$touched">
                 No such menu item exists.
             </span> 
             <span ng-if="regForm.menunumber.$error.required && regForm.menunumber.$touched">

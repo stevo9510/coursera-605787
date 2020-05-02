@@ -1,7 +1,7 @@
 <div class="container">
     <h2 id="menu-categories-title" class="text-center">Registration</h2>
     <fieldset>
-        <form name='regForm' class="signup-form text-center" novalidate>
+        <form name="regForm" class="signup-form text-center" novalidate>
             <input type="text" name="firstname" placeholder="First Name" ng-model="signUpCtrl.user.firstname" required>
             <br>
             <span ng-if="regForm.firstname.$error.required && regForm.firstname.$touched">
@@ -31,13 +31,13 @@
             </span>
             <br>
 
-            <input type="text" name="menunumber" required placeholder="Menu Number of Favorite Dish" ng-model="signUpCtrl.user.menunumber">
-            <br>            
+            <input type="text" name="menunumber" required placeholder="Menu Number of Favorite Dish" ng-model="signUpCtrl.user.menunumber" ng-blur="signUpCtrl.menuItemOnBlur()">
+            <br>        
+            <span ng-if="regForm.menunumber.$invalid && !regForm.menunumber.$error.required">
+                No such menu item exists.
+            </span> 
             <span ng-if="regForm.menunumber.$error.required && regForm.menunumber.$touched">
                 Favorite menu number is required to be entered
-            </span>
-            <span ng-if="signUpCtrl.menuNumberNotFound === true">
-                No such menu item exists
             </span>
             <br>
 

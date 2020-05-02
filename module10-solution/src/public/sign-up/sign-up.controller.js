@@ -4,26 +4,29 @@
     angular.module('public')
         .controller('SignUpController', SignUpController);
 
-    SignUpController.$inject = ['$scope', 'MenuService', 'MyInfoService'];
-    function SignUpController($scope, MenuService, MyInfoService) {
+    SignUpController.$inject = ['MenuService', 'MyInfoService'];
+    function SignUpController(MenuService, MyInfoService) {
         var $ctrl = this;
         $ctrl.user = {};
+        $ctrl.menuItemNotValidated = true;
 
         // automatically devalidate field when the value changes, because we'll
         // want to revalidate it when it loses focus.  
-        $ctrl.menuItemChanged = function () {
-            $scope.regForm.menunumber.$setValidity("invalid", false);
+        $ctrl.menuItemChanged = function (menuNumberInput) {
+            menuNumberInput.$setValidity("invalid", false);
+            $ctrl.menuItemNotValidated = true;
         };
 
-        $ctrl.menuItemOnBlur = function () {
+        $ctrl.menuItemOnBlur = function (menuNumberInput) {
             var promise = MenuService.getMenuItemPromise($ctrl.user.menunumber);
-
+            $ctrl.menuItemNotValidated = false;
             promise.then(function (response) {
                 console.log("Menu Item Response: ", response.data);
-                $scope.regForm.menunumber.$setValidity("invalid", true);
+                menuNumberInput.$setValidity("invalid", true);
+
             })
                 .catch(function (error) {
-                    $scope.regForm.menunumber.$setValidity("invalid", false);
+                    menuNumberInput.$setValidity("invalid", false);
                 });
         }
 

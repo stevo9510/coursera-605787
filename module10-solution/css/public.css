@@ -124,13 +124,13 @@ h3.menu-item-title {
   color:black;
 }
 .signup-form > button:disabled {
-  opacity: 50%;
+  opacity: 0.5;
 }
 .signup-form > button {
   width: 250px;
   height: 40px;
   color: black;
-  opacity: 100%;
+  opacity: 1.0;
   background-color: #f6b319;
 }
 .successful-save {

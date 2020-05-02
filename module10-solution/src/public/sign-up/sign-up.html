@@ -39,6 +39,9 @@
             <span ng-if="regForm.menunumber.$error.required && regForm.menunumber.$touched">
                 Favorite menu number is required to be entered
             </span>
+            <span ng-if="signUpCtrl.menuNumberNotFound === true">
+                No such menu item exists
+            </span>
             <br>
 
             <button ng-disabled="regForm.$invalid" ng-click="signUpCtrl.submit()">Submit</button>

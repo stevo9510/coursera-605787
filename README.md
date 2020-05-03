@@ -17,4 +17,6 @@
 
 [Module 9 Solution](http://stevo9510.github.io/coursera-605787/module9-solution "Module 9 Solution")
 
-[Module 10 Solution](http://stevo9510.github.io/coursera-605787/module10-solution "Module 10 Solution")
+[Module 10 Solution](http://stevo9510.github.io/coursera-605787/module10-solution/Index.html "Module 10 Solution")
+
+[Module 10 Solution](http://stevo9510.github.io/coursera-605787/module10-solution/SpecRunner.html "Module 10 Spec Runner")

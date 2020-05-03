@@ -4,10 +4,11 @@
     angular.module('public')
         .controller('MyInfoController', MyInfoController);
 
-    MyInfoController.$inject = ['MenuService', 'MyInfoService'];
-    function MyInfoController(MenuService, MyInfoService) {
+    MyInfoController.$inject = ['MenuService', 'MyInfoService', 'ApiPath'];
+    function MyInfoController(MenuService, MyInfoService, ApiPath) {
         var $ctrl = this;
         $ctrl.favoriteMenuItem = null;
+        $ctrl.basePath = ApiPath;
 
         $ctrl.userInfo = MyInfoService.getUserInfo();
         if ($ctrl.userInfo && $ctrl.userInfo.menunumber) {

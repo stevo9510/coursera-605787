@@ -28,7 +28,6 @@
                     menuNumberInput.$setValidity("invalid", false);
                 }
             });
-
         }
 
         $ctrl.submit = function () {

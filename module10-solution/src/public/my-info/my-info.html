@@ -1,6 +1,6 @@
 <div class="container">
     <h2 id="menu-categories-title" class="text-center">
-        My Info and Favorite Item
+        My Info
     </h2>
     <br>
     <div ng-if="myInfoCtrl.favoriteMenuItem === null" class="text-center">
@@ -8,18 +8,21 @@
     </div>
     <div ng-if="myInfoCtrl.favoriteMenuItem !== null" class="text-center">
         <div class="row">
-            <div class="col-md-6">
-                <div>First: {{myInfoCtrl.userInfo.firstname}} </div>
-                <div>Last: {{myInfoCtrl.userInfo.lastname}} </div>
-                <div>Email: {{myInfoCtrl.userInfo.email}}</div>
-                <div>Phone: {{myInfoCtrl.userInfo.phone}}</div>
+            
+            <div>Name: {{myInfoCtrl.userInfo.firstname}} {{myInfoCtrl.userInfo.lastname}} </div>
+            <div>Email: {{myInfoCtrl.userInfo.email}}</div>
+            <div>Phone: {{myInfoCtrl.userInfo.phone}}</div>
+
+            <h3>Favorite Item</h3>
+            <h4 class="menu-item-title">{{myInfoCtrl.favoriteMenuItem.name}}</h4>
+            <p class="menu-item-details">{{myInfoCtrl.favoriteMenuItem.description}}</p>
+
+            <div class="menu-item-photo" style="max-width: 300px; margin-left: auto; margin-right: auto;">
+                <div>{{myInfoCtrl.favoriteMenuItem.short_name}}</div>
+                <img class="img-responsive" width="333" height="200" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.favoriteMenuItem.short_name}}.jpg" alt="{{myInfoCtrl.favoriteMenuItem.name}}">
             </div>
 
-            <div class="col-md-6">
-                <menu-item menu-item="myInfoCtrl.favoriteMenuItem">
-                </menu-item>
-            </div>
         </div>
-        
+
     </div>
 </div>

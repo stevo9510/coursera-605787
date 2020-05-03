@@ -18,16 +18,16 @@
         };
 
         $ctrl.menuItemOnBlur = function (menuNumberInput) {
-            var promise = MenuService.getMenuItemPromise($ctrl.user.menunumber);
+            var promise = MenuService.getMenuItemDetails($ctrl.user.menunumber);
             $ctrl.menuItemNotValidated = false;
-            promise.then(function (response) {
-                console.log("Menu Item Response: ", response.data);
-                menuNumberInput.$setValidity("invalid", true);
-
-            })
-                .catch(function (error) {
+            promise.then(function (details) {
+                console.log("Menu Item Response: ", details);
+                if (details !== null) {
+                    menuNumberInput.$setValidity("invalid", true);
+                } else {
                     menuNumberInput.$setValidity("invalid", false);
-                });
+                }
+            });
         }
 
         $ctrl.submit = function () {

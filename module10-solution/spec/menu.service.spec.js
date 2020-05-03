@@ -14,11 +14,21 @@ describe('menuservice', function () {
         });
     });
 
-    it('should return categories list', function () {
-        var category = "A1";
-        $httpBackend.whenGET(ApiPath + '/menu_items/' + category + '.json').respond(['Lunch', 'Dessert']);
-        menuservice.getMenuItemPromise(category).then(function (response) {
-            expect(response.data).toEqual(['Lunch', 'Dessert']);
+    it('Should return the correct data when successful', function () {
+        var menuItemShortName = "A1";
+        $httpBackend.expectGET(ApiPath + '/menu_items/' + menuItemShortName + '.json').respond(['Lunch', 'Dessert']);
+        menuservice.getMenuItemDetails(menuItemShortName).then(function (details) {
+            expect(details).toEqual(['Lunch', 'Dessert']);
+        });
+        $httpBackend.flush();
+    });
+
+    it('Should return null when error', function () {
+        var menuItemShortName = "C33";
+        // force a bad response (404 error in this case).
+        $httpBackend.expectGET(ApiPath + '/menu_items/' + menuItemShortName + '.json').respond(404, 'Bad request');
+        menuservice.getMenuItemDetails(menuItemShortName).then(function (details) {
+            expect(details).toEqual(null);
         });
         $httpBackend.flush();
     });

@@ -11,9 +11,9 @@
 
         $ctrl.userInfo = MyInfoService.getUserInfo();
         if ($ctrl.userInfo && $ctrl.userInfo.menunumber) {
-            MenuService.getMenuItemPromise($ctrl.userInfo.menunumber)
-                .then(function (response) {
-                    $ctrl.favoriteMenuItem = response.data;
+            MenuService.getMenuItemDetails($ctrl.userInfo.menunumber)
+                .then(function (details) {
+                    $ctrl.favoriteMenuItem = details;
                 });
         }
     }

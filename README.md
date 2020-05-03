@@ -19,4 +19,4 @@
 
 [Module 10 Solution](http://stevo9510.github.io/coursera-605787/module10-solution/Index.html "Module 10 Solution")
 
-[Module 10 Solution](http://stevo9510.github.io/coursera-605787/module10-solution/SpecRunner.html "Module 10 Spec Runner")
+[Module 10 Spec Runner](http://stevo9510.github.io/coursera-605787/module10-solution/SpecRunner.html "Module 10 Spec Runner / Unit Tests")

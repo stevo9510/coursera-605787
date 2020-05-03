@@ -16,6 +16,19 @@
             </span>
             <br>
 
+            <input type="text" name="menunumber" ng-change="signUpCtrl.menuItemChanged(regForm.menunumber)" required placeholder="Menu Number of Favorite Dish" ng-model="signUpCtrl.user.menunumber" ng-blur="signUpCtrl.menuItemOnBlur(regForm.menunumber)">
+            <br>
+            <span ng-if="regForm.menunumber.$invalid && !regForm.menunumber.$error.required && regForm.menunumber.$touched && !signUpCtrl.menuItemNotValidated">
+                No such menu item exists.
+            </span>
+            <span ng-if="regForm.menunumber.$error.required && regForm.menunumber.$touched">
+                Favorite menu number is required to be entered
+            </span>
+            <span ng-if="signUpCtrl.menuNumberNotFound === true">
+                No such menu item exists
+            </span>
+            <br>
+
             <input type="email" name="email" placeholder="Email" ng-model="signUpCtrl.user.email" required>
             <br>
             <span ng-if="regForm.email.$invalid && regForm.email.$touched">
@@ -24,23 +37,10 @@
             <br>
 
             <input type="text" name="phone" required placeholder="Phone ###-###-####" ng-model="signUpCtrl.user.phone"
-                pattern="(\d{3})-(\d{3})-(\d{4})">
+                   pattern="(\d{3})-(\d{3})-(\d{4})">
             <br>
             <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
                 Phone must be in the format ###-###-####.
-            </span>
-            <br>
-
-            <input type="text" name="menunumber" ng-change="signUpCtrl.menuItemChanged(regForm.menunumber)" required placeholder="Menu Number of Favorite Dish" ng-model="signUpCtrl.user.menunumber" ng-blur="signUpCtrl.menuItemOnBlur(regForm.menunumber)">
-            <br>        
-            <span ng-if="regForm.menunumber.$invalid && !regForm.menunumber.$error.required && regForm.menunumber.$touched && !signUpCtrl.menuItemNotValidated">
-                No such menu item exists.
-            </span> 
-            <span ng-if="regForm.menunumber.$error.required && regForm.menunumber.$touched">
-                Favorite menu number is required to be entered
-            </span>
-            <span ng-if="signUpCtrl.menuNumberNotFound === true">
-                No such menu item exists
             </span>
             <br>
 

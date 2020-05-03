@@ -21,7 +21,7 @@
             var promise = MenuService.getMenuItemDetails($ctrl.user.menunumber);
             $ctrl.menuItemNotValidated = false;
             promise.then(function (details) {
-                console.log("Menu Item Response: ", details);
+                // If we got results back, then valid item.
                 if (details !== null) {
                     menuNumberInput.$setValidity("invalid", true);
                 } else {

@@ -1,4 +1,4 @@
-describe('menuservice', function () {
+describe('Menu Service', function () {
 
     var menuservice;
     var $httpBackend;
